@@ -1,0 +1,585 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Welcome to Brenda Miao Project 2’s documentation! &mdash; Brenda Miao Project 2  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="#" class="icon icon-home"> Brenda Miao Project 2
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Welcome to Brenda Miao Project 2’s documentation!</a></li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+</div>
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">Brenda Miao Project 2</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Welcome to Brenda Miao Project 2’s documentation!</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-clusters.algs">
+<span id="welcome-to-brenda-miao-project-2-s-documentation"></span><h1>Welcome to Brenda Miao Project 2’s documentation!<a class="headerlink" href="#module-clusters.algs" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="clusters.algs.Clustering">
+<em class="property">class </em><code class="sig-prename descclassname">clusters.algs.</code><code class="sig-name descname">Clustering</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">k</span><span class="o">=</span><span class="default_value">3</span></em><span class="sig-paren">)</span><a class="headerlink" href="#clusters.algs.Clustering" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Parent class for hierarchical and partitioning clustering</p>
+<dl class="py attribute">
+<dt id="clusters.algs.Clustering.self.k">
+<code class="sig-prename descclassname">self.</code><code class="sig-name descname">k</code><a class="headerlink" href="#clusters.algs.Clustering.self.k" title="Permalink to this definition">¶</a></dt>
+<dd><p>number of clusters to initialize, default=3</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="clusters.algs.Clustering.self.clusters">
+<code class="sig-prename descclassname">self.</code><code class="sig-name descname">clusters</code><a class="headerlink" href="#clusters.algs.Clustering.self.clusters" title="Permalink to this definition">¶</a></dt>
+<dd><p>initialize an empty vector to contain cluster labels for clustering</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>k</strong> (<em>int</em>) – number of clusters to initialize, default=3</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="clusters.algs.Clustering.calc_dist">
+<em class="property">static </em><code class="sig-name descname">calc_dist</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">values1</span></em>, <em class="sig-param"><span class="n">values2</span></em>, <em class="sig-param"><span class="n">how</span><span class="o">=</span><span class="default_value">'bit'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#clusters.algs.Clustering.calc_dist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the distance between two arrays</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>values1</strong> (<em>np.array</em>) – First array of values to calculate distance between</p></li>
+<li><p><strong>values2</strong> (<em>np.array</em>) – Second array of values to calculate distance between</p></li>
+<li><p><strong>how</strong> (<em>str</em>) – Specifies what metric to return (“ham”ming, “euc”lidean, jac”card {for sparse data}, or “bit”-wise jaccard), default=”bit”</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Distance (euclidian, manhattan, or jaccard based on specified metric) between the 2 arrays</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float, int</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – Sample value arrays do not have the same length</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="clusters.algs.PartitionClustering">
+<em class="property">class </em><code class="sig-prename descclassname">clusters.algs.</code><code class="sig-name descname">PartitionClustering</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">k</span><span class="o">=</span><span class="default_value">3</span></em><span class="sig-paren">)</span><a class="headerlink" href="#clusters.algs.PartitionClustering" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#id0" title="clusters.algs.Clustering"><code class="xref py py-class docutils literal notranslate"><span class="pre">clusters.algs.Clustering</span></code></a></p>
+<p>Perform partition clustering for a set of sample values</p>
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">self.k, self.clusters</code></dt>
+<dd><p>inherited from parent Clustering class</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="clusters.algs.PartitionClustering.self.centroids">
+<code class="sig-prename descclassname">self.</code><code class="sig-name descname">centroids</code><a class="headerlink" href="#clusters.algs.PartitionClustering.self.centroids" title="Permalink to this definition">¶</a></dt>
+<dd><p>initialize empty dictionary to contain centroids</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>k</strong> (<em>int</em>) – number of clusters to initialize, default=3</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="clusters.algs.PartitionClustering.cluster">
+<code class="sig-name descname">cluster</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">samples</span></em>, <em class="sig-param"><span class="n">max_iter</span><span class="o">=</span><span class="default_value">10</span></em>, <em class="sig-param"><span class="n">dist_met</span><span class="o">=</span><span class="default_value">'euc'</span></em>, <em class="sig-param"><span class="n">preprocess</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#clusters.algs.PartitionClustering.cluster" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform partitioning (kmeans++ &amp; kmeans) clustering given a set of samples such as ligands</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>samples</strong> (<em>list</em><em>, </em><em>np.array</em><em>, </em><em>set</em><em>, or </em><em>other iterable object</em>) – Set of ligands to cluster</p></li>
+<li><p><strong>max_iter</strong> (<em>int</em>) – maximum number of iterations for clustering if the algorithm does not converge, default=10</p></li>
+<li><p><strong>dist_met</strong> (<em>str</em>) – distance metric to use for calculating distance between points and centroids, default=”euc”</p></li>
+<li><p><strong>preprocess</strong> (<em>method</em>) – function that formats sample values to array / array-like object for clustering, default=None</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>cluster labels whose indices correspond to the order of the orginal sample list</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If number of clusters greater than number of samples</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="clusters.algs.HierarchicalClustering">
+<em class="property">class </em><code class="sig-prename descclassname">clusters.algs.</code><code class="sig-name descname">HierarchicalClustering</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">k</span><span class="o">=</span><span class="default_value">3</span></em><span class="sig-paren">)</span><a class="headerlink" href="#clusters.algs.HierarchicalClustering" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#id0" title="clusters.algs.Clustering"><code class="xref py py-class docutils literal notranslate"><span class="pre">clusters.algs.Clustering</span></code></a></p>
+<p>Perform hierarchical clustering for a set of sample values</p>
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname">self.k, self.clusters</code></dt>
+<dd><p>inherited from parent Clustering class</p>
+</dd></dl>
+
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>k</strong> (<em>int</em>) – number of clusters to initialize, default=3</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="clusters.algs.HierarchicalClustering.cluster">
+<code class="sig-name descname">cluster</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">samples</span></em>, <em class="sig-param"><span class="n">linkage</span><span class="o">=</span><span class="default_value">'max'</span></em>, <em class="sig-param"><span class="n">dist_met</span><span class="o">=</span><span class="default_value">'bit'</span></em>, <em class="sig-param"><span class="n">preprocess</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#clusters.algs.HierarchicalClustering.cluster" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform hierarchical clustering given a set of samples such as ligands</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>samples</strong> (<em>list</em><em>, </em><em>np.array</em><em>, </em><em>set</em><em>, or </em><em>other iterable object</em>) – Set of ligands to cluster</p></li>
+<li><p><strong>linkage</strong> (<em>str</em>) – type of linkage to use when updating the distance matrix, default=”max”</p></li>
+<li><p><strong>dist_met</strong> (<em>str</em>) – distance metric to use for calculating distance between points and centroids, default=”bit”</p></li>
+<li><p><strong>preprocess</strong> (<em>method</em>) – function that formats sample values to array / array-like object for clustering, default=None</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>cluster labels whose indices correspond to orginal sample list</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If number of clusters greater than number of samples</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="clusters.algs.Ligand">
+<em class="property">class </em><code class="sig-prename descclassname">clusters.algs.</code><code class="sig-name descname">Ligand</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ligand_id</span></em>, <em class="sig-param"><span class="n">score</span></em>, <em class="sig-param"><span class="n">smile</span></em>, <em class="sig-param"><span class="n">onbits</span></em>, <em class="sig-param"><span class="n">bit_length</span><span class="o">=</span><span class="default_value">1024</span></em>, <em class="sig-param"><span class="n">densify</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#clusters.algs.Ligand" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Object containing representation and description of molecule</p>
+<dl class="py attribute">
+<dt id="clusters.algs.Ligand.self.ligand_id">
+<code class="sig-prename descclassname">self.</code><code class="sig-name descname">ligand_id</code><a class="headerlink" href="#clusters.algs.Ligand.self.ligand_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>a unique ID to track the ligand</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="clusters.algs.Ligand.self.score">
+<code class="sig-prename descclassname">self.</code><code class="sig-name descname">score</code><a class="headerlink" href="#clusters.algs.Ligand.self.score" title="Permalink to this definition">¶</a></dt>
+<dd><p>Vina AutoDock score</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="clusters.algs.Ligand.self.smile">
+<code class="sig-prename descclassname">self.</code><code class="sig-name descname">smile</code><a class="headerlink" href="#clusters.algs.Ligand.self.smile" title="Permalink to this definition">¶</a></dt>
+<dd><p>SMILE-formatted string representation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="clusters.algs.Ligand.self.onbits">
+<code class="sig-prename descclassname">self.</code><code class="sig-name descname">onbits</code><a class="headerlink" href="#clusters.algs.Ligand.self.onbits" title="Permalink to this definition">¶</a></dt>
+<dd><p>sparse representation of ligand fingerprint</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list, set, other iterable</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ligand_id</strong> (<em>int</em>) – a unique ID to track the ligand</p></li>
+<li><p><strong>score</strong> (<em>list</em>) – Vina AutoDock score</p></li>
+<li><p><strong>smile</strong> (<em>str</em>) – SMILE-formatted string representation</p></li>
+<li><p><strong>onbits</strong> (<em>list</em><em>, </em><em>set</em><em>, </em><em>other iterable</em>) – sparse representation of ligand fingerprint</p></li>
+<li><p><strong>bit_length</strong> (<em>int</em>) – the length of the bit vector for densification, default=1024</p></li>
+<li><p><strong>densify</strong> (<em>bool</em>) – whether to densify the onbits upon initialization, default=True</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="clusters.algs.Ligand.densify">
+<code class="sig-name descname">densify</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">length</span></em><span class="sig-paren">)</span><a class="headerlink" href="#clusters.algs.Ligand.densify" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts sparse representation of ligand onbits to dense binary array</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>length</strong> (<em>int</em>) – the length of the dense representation</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="clusters.algs.Ligand.sparsify">
+<code class="sig-name descname">sparsify</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#clusters.algs.Ligand.sparsify" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts dense representation of ligand onbits to sparse array of indices where onbits occur</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="clusters.algs.calcClusterQuality">
+<code class="sig-prename descclassname">clusters.algs.</code><code class="sig-name descname">calcClusterQuality</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">samples</span></em>, <em class="sig-param"><span class="n">clust_labels</span></em>, <em class="sig-param"><span class="n">dist_met</span><span class="o">=</span><span class="default_value">'bit'</span></em>, <em class="sig-param"><span class="n">preprocess</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#clusters.algs.calcClusterQuality" title="Permalink to this definition">¶</a></dt>
+<dd><p>Measures the quality of a set of clusters using silhouette score</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>samples</strong> (<em>np.ndarray</em>) – sample values that map to labels by index</p></li>
+<li><p><strong>clust_labels</strong> (<em>np.array</em><em>, </em><em>list</em>) – cluster labels for each of the samples</p></li>
+<li><p><strong>dist_met</strong> (<em>str</em>) – distance metric to compare samples by when calculating silhouette score, default=”bit”</p></li>
+<li><p><strong>preprocess</strong> (<em>method</em>) – function to preprocess samples into sample x value array for easy manipulation, default=None</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>silhouette score of clusters</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="clusters.algs.calcClusterSimilarity">
+<code class="sig-prename descclassname">clusters.algs.</code><code class="sig-name descname">calcClusterSimilarity</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">labels1</span></em>, <em class="sig-param"><span class="n">labels2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#clusters.algs.calcClusterSimilarity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates similarity between two different sets of clustering results</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>labels1</strong> (<em>list</em><em>, </em><em>np.array</em><em>, or </em><em>other list like object</em>) – set of labels / results from a clustering method</p></li>
+<li><p><strong>labels2</strong> (<em>list</em><em>, </em><em>np.array</em><em>, or </em><em>other list like object</em>) – set of labels / results from a clustering method</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Jaccard index between the two specified clustering results</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="clusters.algs.readLigands">
+<code class="sig-prename descclassname">clusters.algs.</code><code class="sig-name descname">readLigands</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ligand_file</span></em>, <em class="sig-param"><span class="n">n</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#clusters.algs.readLigands" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads in csv file containing ligand information and converts data to list of Ligand objects</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ligand_file</strong> (<em>str</em><em>, </em><em>pathlike</em>) – csv file containing ligand information</p></li>
+<li><p><strong>n</strong> (<em>int</em>) – number of ligands to read in, default (=None) reads in all ligands in file</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Ligand objects read in from csv file</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list&lt;Ligand&gt;</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="clusters.algs.preprocessLigands">
+<code class="sig-prename descclassname">clusters.algs.</code><code class="sig-name descname">preprocessLigands</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">samples</span></em><span class="sig-paren">)</span><a class="headerlink" href="#clusters.algs.preprocessLigands" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extracts onbits information from ligands as a preprocessing step to clustering or calculating other scores</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>samples</strong> (<em>list&lt;Ligands&gt;</em>) – list of Ligand objects with dense onbit representations</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>sample x onbit array that can be passed into clustering functions</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt id="id0">
+<em class="property">class </em><code class="sig-prename descclassname">clusters.algs.</code><code class="sig-name descname">Clustering</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">k</span><span class="o">=</span><span class="default_value">3</span></em><span class="sig-paren">)</span><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parent class for hierarchical and partitioning clustering</p>
+<dl class="py attribute">
+<dt id="id1">
+<code class="sig-prename descclassname">self.</code><code class="sig-name descname">k</code><a class="headerlink" href="#id1" title="Permalink to this definition">¶</a></dt>
+<dd><p>number of clusters to initialize, default=3</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="id2">
+<code class="sig-prename descclassname">self.</code><code class="sig-name descname">clusters</code><a class="headerlink" href="#id2" title="Permalink to this definition">¶</a></dt>
+<dd><p>initialize an empty vector to contain cluster labels for clustering</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>k</strong> (<em>int</em>) – number of clusters to initialize, default=3</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="id3">
+<em class="property">static </em><code class="sig-name descname">calc_dist</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">values1</span></em>, <em class="sig-param"><span class="n">values2</span></em>, <em class="sig-param"><span class="n">how</span><span class="o">=</span><span class="default_value">'bit'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#id3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the distance between two arrays</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>values1</strong> (<em>np.array</em>) – First array of values to calculate distance between</p></li>
+<li><p><strong>values2</strong> (<em>np.array</em>) – Second array of values to calculate distance between</p></li>
+<li><p><strong>how</strong> (<em>str</em>) – Specifies what metric to return (“ham”ming, “euc”lidean, jac”card {for sparse data}, or “bit”-wise jaccard), default=”bit”</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Distance (euclidian, manhattan, or jaccard based on specified metric) between the 2 arrays</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float, int</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – Sample value arrays do not have the same length</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Brenda Miao.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
