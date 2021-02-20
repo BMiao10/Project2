@@ -1,7 +1,7 @@
 # Project 2 - Clustering and Drug Discovery
 ## Due 02/17/2021
 
-![BuildStatus](https://github.com/ucsf-bmi-203-2021/Project2/workflows/HW2/badge.svg?event=push)
+![BuildStatus](https://github.com/bmiao10/Project2/workflows/HW2/badge.svg?event=push)
 
 In this assignment, you will evaluate results from a high-throughput virtual screen against the SARS-CoV2 Spike protein / Human ACE2 interface.  There are two parts to this assignment and Part 2 requires completion of Part 1. We recommend reading through both Part 1 and Part 2 before beginning this assignment. 
 
@@ -42,5 +42,6 @@ Additional packages imported for Clusters.algs.py are updated in the requirement
 ### Part II
 Code (with functions imported from clusters.algs.py), figures, and my answers for part II are located in the Jupyter notebook "Brenda_Miao_BMI203_HW2.ipynb" in the root folder. 
 Output for certain questions, indicated in the Jupyter notebook markdown, are stored in output folder.
+The full distance matrix was not included in outputs due to github size constraints
 
 
