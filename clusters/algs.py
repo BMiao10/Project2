@@ -54,11 +54,13 @@ class Clustering():
             raise ValueError("Sample values must have same length to calculate distance by %s"%how)
 
         # Calculations for other distance metrics - must have dense representation
-        if how=="ham" : 
+        
+        if how=="ham" : # hamming distance
             return np.bitwise_xor(values1, values2).sum()
+          
+        elif how=="bit" : # bitwise Jaccard index
             
-        elif how=="bit" : 
-            
+            # if the union is 0, return 0 (least distance since they are both just 0s)
             if np.bitwise_or(values1, values2).sum() == 0: 
                 return 0
             
@@ -74,7 +76,7 @@ class PartitionClustering(Clustering):
     
     Attributes:
     	self.k, self.clusters : inherited from parent Clustering class
-        self.centroids (dict) : initialize empty dictionary to contain centroids
+    	self.centroids (dict) : initialize empty dictionary to contain centroids
         
     Parameters:
         k (int) : number of clusters to initialize, default=3
@@ -106,6 +108,9 @@ class PartitionClustering(Clustering):
             ValueError : If number of clusters greater than number of samples 
 
         """
+
+        # reset clusters to be empty
+        self.clusters = []
         
         # Check that the number of clusters does not exceed number of samples
         if self.k > len(samples):
@@ -149,9 +154,14 @@ class PartitionClustering(Clustering):
                 distances.append(min_dist)
             
             # Normalize array of minimum distance values to 1 to create "probablilities"
-            # The lower the distance (ie. the closer it is to a current centroid), the lower the probability
+            # The lower the distance (ie. the closer it is to a current centroid), the lower the probability value
             # Values with a distance of 0 (identical to current centroid) will not be selected
+
             prob = np.array(distances)
+            if np.isnan(prob).any():
+                prob = np.ones(len(distances))
+                print(prob)
+
             prob = prob / prob.sum()
             
             # Draw a random choice based on the probabilities
@@ -275,6 +285,9 @@ class HierarchicalClustering(Clustering):
             ValueError : If number of clusters greater than number of samples 
 
         """
+
+        # Reset the number of clusters
+        self.clusters = []
 
         # Check that the number of clusters does not exceed number of samples
         if self.k > len(samples):
@@ -414,7 +427,7 @@ class Ligand():
             self.onbits = np.where(self.onbits == 1)
     
 
-def calcClusterQuality(samples, clust_labels, dist_met="bit", preprocess=None):
+def calcClusterQuality(samples, clust_labels, dist_met="bit", preprocess=None, output_matrix=None, input_matrix=None) :
     """
     Measures the quality of a set of clusters using silhouette score
 
@@ -423,6 +436,8 @@ def calcClusterQuality(samples, clust_labels, dist_met="bit", preprocess=None):
         clust_labels (np.array, list) : cluster labels for each of the samples
         dist_met (str) : distance metric to compare samples by when calculating silhouette score, default="bit"
         preprocess (method) : function to preprocess samples into sample x value array for easy manipulation, default=None
+        output_matrix (str, path-like) : .npy file to output distance matrix to for future use
+        input_matrix (str, path-like) : loads in .npy file containing n x n distance matrix between all n samples
 
     Returns:
         float : silhouette score of clusters 
@@ -433,12 +448,21 @@ def calcClusterQuality(samples, clust_labels, dist_met="bit", preprocess=None):
     if preprocess is not None:
         samples = preprocess(samples)
     
-    # create n x n distance matrix 
-    dist_mat = np.ones([len(samples), len(samples)])
-        
-    for i in range(len(samples)):
-        for j in range(len(samples)):
-            dist_mat[i][j] = Clustering().calc_dist(samples[i], samples[j], how=dist_met)
+    # If a distance matrix exists, load it in (to save time)
+    # Otherwise create an n x n distance matrix between all n samples
+    # and output it if an output path is specified
+    if input_matrix is None:
+	    dist_matrix = np.ones([len(samples), len(samples)])
+	        
+	    for i in range(len(samples)):
+	        for j in range(len(samples)):
+	            dist_matrix[i][j] = Clustering().calc_dist(samples[i], samples[j], how=dist_met)
+
+	    if output_matrix is not None:
+	    	np.save(output_matrix, dist_matrix)
+
+    else:
+        dist_matrix = np.load(input_matrix)
     
     # calculate silhouette score for each point
     all_scores = []
@@ -464,8 +488,8 @@ def calcClusterQuality(samples, clust_labels, dist_met="bit", preprocess=None):
             cluster = cluster[cluster != index]
             
             for curr_clust in cluster:
-                a_i += dist_mat[index][curr_clust]
             
+            	a_i += dist_matrix[index][curr_clust]
             a_i /= len(cluster) # divide by n - 1 (since point has been removed)
             
             # Get lowest average distance to other clusters, which is equivalent to 
@@ -473,10 +497,10 @@ def calcClusterQuality(samples, clust_labels, dist_met="bit", preprocess=None):
             b_i = np.inf
             closest_clust = 0
             
-            for label in clust_labels:
+            for label in list(set(clust_labels)):
                 if label != curr_label:
                     curr_clust = np.where(np.array(clust_labels) == label)[0]
-                    b_dist = dist_mat[curr_clust].sum(axis=0)[index]
+                    b_dist = dist_matrix[curr_clust].sum(axis=0)[index]
                     b_dist = b_dist / len(curr_clust)
                     
                     if b_dist < b_i:
