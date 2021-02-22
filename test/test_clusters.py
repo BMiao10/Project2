@@ -1,6 +1,6 @@
 
 import pytest
-from cluster import algs
+from clusters import algs
 
 def test_partitioning():
     
